@@ -59,10 +59,14 @@
     </p>
     <script>
         let children = document.body.children;
-        for (let i = 0; i < children.length; i = i + 1) {
+        for (let i = 0; i < children.length; i = i + 2) {
             console.log(children[i]);
+            children[i].textContent = children[i].textContent.toUpperCase();
         }
-        children[0].textContent = "dominique";
+        // for (let j = 0; j < children.length; j = j + 2) {
+
+
+        // children[0].textContent = "dominique";
     </script>
 </body>
 
