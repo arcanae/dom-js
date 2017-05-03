@@ -17,8 +17,8 @@
         </fieldset>
 
         <fieldset>
-            <label for="secondname">second name:</label>
-            <input id="secondname" type="text">
+            <label for="lastname">last name:</label>
+            <input id="lastname" type="text">
         </fieldset>
         <fieldset>
             <label for="mail">mail:</label>
@@ -28,16 +28,25 @@
     </form>
     <section>
         <h1>Welcome</h1>
-        <p id="fill_me"></p>
+        <pre id="fill_me"></pre>
     </section>
     <script>
         let form = document.querySelector("form");
         form.addEventListener("submit", function(e) {
             // get `input` from the `form
+            let input = document.querySelectorAll("input");
+            let p = document.querySelector("#fill_me");
 
             // display `input` content into the console
+            //console.log(input[0].value + "\n" + input[1].value + "\n" + input[2].value);
+
+            for (let i = 0; i < input.length - 1; i++) {
+                console.log(input[i].value);
+                p.textContent += input[i].value + "\n";
+            }
 
             // put `input` values into `#fill_me`
+            //p.textContent = input[0].value + "\n" + input[1].value + "\n" + input[2].value;
 
             // DO NOT REMOVE...
             e.preventDefault();
